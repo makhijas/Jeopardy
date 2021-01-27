@@ -7,7 +7,10 @@
     <script src="app.js"></script>
     <title>Jeopardy</title>
 </head>
-<header>JEOPARDY!</header>
+<header>
+    <div class="title">JEOPARDY!</div>
+    <div class="scoreDisplay">0</div>
+</header>
 <body>
     <div class="gameboard">
         <div class="categories">
@@ -19,8 +22,8 @@
         </div>
             <div class="gameboardClues" >
                 <div class="clues">
-                    <button id="button" onclick="musicQs()">$100</button>
-                    <button class="button">$200</button>
+                    <button class="button" onclick="music100()">$100</button>
+                    <button class="button" onclick="music200()">$200</button>
                     <button class="button">$300</button>
                     <button>$400</button>
                     <button>$500</button>

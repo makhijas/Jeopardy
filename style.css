@@ -5,6 +5,9 @@ body {
 }
 
 header {
+    display: flex; 
+    align-items: center;
+    justify-content:space-between;
     background-color: blue;
     color: yellow;
     width: 500px;
@@ -52,3 +55,10 @@ button {
     /*CITE for flexbox [] */
 }
 
+.scoreboard {
+    display: flex;
+    justify-items: right;
+    outline: solid black; 
+    height: 50px; 
+    width: 100px; 
+}
