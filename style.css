@@ -18,9 +18,9 @@ span {
     width:100px;
     height: 50px;
     text-align: center;
-    outline: 1px solid black;
+    border: 1px solid black;
     background-color:blue;
-    color: yellow;
+    color: white;
 }
 .categories {
     display: flex;
@@ -37,7 +37,7 @@ button {
     height: 50px;
     font-size: 25px;
     top: 50px;
-    text-align: center;
+    justify-content: center;
 }
 
 .gameboard {
