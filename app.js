@@ -19,7 +19,15 @@
 //   }
 
 const music = {
-    100: "Q1", 
+    100: "Beethoven, Vivaldi, Tchaikovsky and Mozart are from this era", 
+    200: "Q2",
+    300: "Q3",
+    400: "Q4",
+    500: "Q5"
+}
+
+const musicA = {
+    100: "Classical", 
     200: "Q2",
     300: "Q3",
     400: "Q4",
@@ -27,12 +35,17 @@ const music = {
 }
 const musicQs = () => {
     let x = ""
-    let clue=prompt("Beethoven, Vivaldi, Tchaikovsky and Mozart are from this era");
-    if (clue=== "Classical"){
-       x="Correct!";
-      alert(x);
-   } else {
-       x="Incorrect!";
-       alert(x);
-}
-}
+    for (const key in music) {
+        let clue=prompt(music[key]);
+        
+        //for (let j=0; j > musicA.length; j++) {
+            if (clue = "musicA[100]"){
+            x="Correct!";
+            alert(x);
+            } else {
+                x="Incorrect!";
+                alert(x);
+            }
+        }
+    }
+//}
