@@ -43,7 +43,7 @@ button {
 .gameboard {
     display:flex; 
     flex-direction: column;
-    /*CITE for flexbox [] */
+    /*CITE for flexbox [https://css-tricks.com/snippets/css/a-guide-to-flexbox/] */
 }
 
 .gameboardClues {
