@@ -1,24 +1,26 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 header {
     background-color: blue;
     color: yellow;
     width: 500px;
     height: 50px;   
     text-align: center;
-    display:table-cell;
-    vertical-align: middle; 
     /*CITE for alignment [https://www.w3.org/Style/Examples/007/center.en.html] */
     font-size: 30px;
 }
 
 span {
-    display: flex; 
-    flex-direction: row;
     width:100px;
     height: 50px;
-    border: solid; 
-    border-color: black;
-    border-right-width: 0px;
-    border-bottom-width: 0px
+    text-align: center;
+    outline: 1px solid black;
+    background-color:blue;
+    color: yellow;
 }
 .categories {
     display: flex;
@@ -35,13 +37,12 @@ button {
     height: 50px;
     font-size: 25px;
     top: 50px;
+    text-align: center;
 }
 
 .gameboard {
     display:flex; 
     flex-direction: column;
-    top: 50px;
-    margin: 50px;
     /*CITE for flexbox [] */
 }
 
