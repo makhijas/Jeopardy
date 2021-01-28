@@ -56,32 +56,13 @@ const music200 = () => {
         alert(x);
     }
 }
-//     let clue=prompt(music[300]);
-//     if (clue = "musicA[300]"){
-//     x="Correct!";
-//     alert(x);
-//     } else {
-//         x="Incorrect!";
-//         alert(x);
-//     }
 
-//     let clue=prompt(music[400]);
-//     if (clue = "musicA[400]"){
-//     x="Correct!";
-//     alert(x);
-//     } else {
-//         x="Incorrect!";
-//         alert(x);
-//     }
-    
-//     let clue=prompt(music[500]);
-//     if (clue = "musicA[500]"){
-//     x="Correct!";
-//     alert(x);
-//     } else {
-//         x="Incorrect!";
-//         alert(x);
-//     }
-// }
-    //}
-//}
+let scoreSum = parseInt(document.getElementById("scoreDisplay").innerHTML)
+console.log(scoreSum)
+const score = (scoreSum) => {
+    if (alert(x) === "Correct!") {
+        scoreSum = scoreSum + parseInt(document.getElementById("button").innerHTML)
+        console.log(scoreSum)
+        document.getElementById("scoreDisplay").innerHTML = scoreSum
+    }
+}

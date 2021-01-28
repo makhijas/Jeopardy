@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
     <title>Jeopardy</title>
 </head>
 <header>
     <div class="title">JEOPARDY!</div>
-    <div class="scoreDisplay">0</div>
+
 </header>
 <body>
     <div class="gameboard">
@@ -22,9 +21,9 @@
         </div>
             <div class="gameboardClues" >
                 <div class="clues">
-                    <button class="button" onclick="music100()">$100</button>
-                    <button class="button" onclick="music200()">$200</button>
-                    <button class="button">$300</button>
+                    <button id="button" onclick="music100()">$100</button>
+                    <button id="button" onclick="music200()">$200</button>
+                    <button id="button">$300</button>
                     <button>$400</button>
                     <button>$500</button>
                 </div>
@@ -62,5 +61,7 @@
                 </div>
             </div>
     </div>
+    <span id="scoreDisplay">0</span>
 </body>
+<script src="app.js"></script>
 </html>
