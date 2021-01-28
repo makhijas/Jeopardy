@@ -39,6 +39,7 @@ const music100 = () => {
     if (clueMusic100 === musicA[100]){
         xMusic100="Correct!"
         alert(xMusic100)
+        score()
     } else {
         x="Incorrect!";
         alert(x);
@@ -57,12 +58,15 @@ const music200 = () => {
     }
 }
 
-let scoreSum = parseInt(document.getElementById("scoreDisplay").innerHTML)
-console.log(scoreSum)
-const score = (scoreSum) => {
-    if (alert(x) === "Correct!") {
-        scoreSum = scoreSum + parseInt(document.getElementById("button").innerHTML)
-        console.log(scoreSum)
-        document.getElementById("scoreDisplay").innerHTML = scoreSum
-    }
+// let scoreSum = parseFloat(document.getElementById("scoreDisplay").innerHTML)
+// console.log(scoreSum)
+// a = document.getElementById("button").innerHTML.split("$")
+// console.log(a)
+// //console.log(a[1])
+
+const score = () => {
+        let currentScore = parseFloat(document.getElementById("scoreDisplay").innerHTML)
+        buttonMoney = document.getElementById("button").innerHTML.split("$")
+        currentScore = parseFloat(buttonMoney[1]) + currentScore
+        document.getElementById("scoreDisplay").innerHTML = currentScore;
 }
