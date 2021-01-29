@@ -1,5 +1,3 @@
-//Array of dollar amounts
-//dollar = [100, 200, 300, 400, 500]
 
 //Question and Answer objects
 //CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
@@ -13,6 +11,60 @@ const musicQ = {
 
 //CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
 const musicA = {
+    100: "Classical", 
+    200: "Hamilton",
+    300: "Chicago",
+    400: "Dark Side Of The Moon",
+    500: "Led Zepplin"
+}
+
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+const scienceQ = {
+    100: "This is the nearest planet to the sun?", 
+    200: "This is the largest known land animal?",
+    300: "Animals that eat both plants and meat",
+    400: "Process that plants use to convert CO2 to O2 using sunlight and water",
+    500: "First woman to win the Nobel Prize - TWICE!"
+}
+
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+const scienceA = {
+    100: "Mercury", 
+    200: "Elephant",
+    300: "Omnivore",
+    400: "Photosynthesis",
+    500: "Marie Curie"
+}
+
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+const artQ = {
+    100: "Beethoven, Vivaldi, Tchaikovsky and Mozart are from this era", 
+    200: "This broadway musical first came to Seattle in 2018",
+    300: "Kanye West's hometown",
+    400: "This Pink Floyd album features a prism on the cover",
+    500: "This famous music group was formerly known as the New Yardbirds"
+}
+
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+const artA = {
+    100: "Classical", 
+    200: "Hamilton",
+    300: "Chicago",
+    400: "Dark Side Of The Moon",
+    500: "Led Zepplin"
+}
+
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+const popCultQ = {
+    100: "Beethoven, Vivaldi, Tchaikovsky and Mozart are from this era", 
+    200: "This broadway musical first came to Seattle in 2018",
+    300: "Kanye West's hometown",
+    400: "This Pink Floyd album features a prism on the cover",
+    500: "This famous music group was formerly known as the New Yardbirds"
+}
+
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+const popCultA = {
     100: "Classical", 
     200: "Hamilton",
     300: "Chicago",
@@ -43,6 +95,61 @@ const music = (e) => {
         }
 }
 
+const science = (e) => {
+    points = e.innerHTML.split("$")
+    console.log(points)
+    let clue = prompt(musicQ[points[1]])
+    e.disabled = true
+    if(clue === musicA[points[1]]) {
+        alert("Correct!")
+        scoreUp(points)
+    } else {
+        alert("Incorrect")
+        scoreDown(points)
+    }
+}
+
+const art = (e) => {
+    points = e.innerHTML.split("$")
+    console.log(points)
+    let clue = prompt(musicQ[points[1]])
+    e.disabled = true
+    if(clue === musicA[points[1]]) {
+        alert("Correct!")
+        scoreUp(points)
+    } else {
+        alert("Incorrect")
+        scoreDown(points)
+    }
+}
+
+const popCult = (e) => {
+    points = e.innerHTML.split("$")
+    console.log(points)
+    let clue = prompt(musicQ[points[1]])
+    e.disabled = true
+    if(clue === musicA[points[1]]) {
+        alert("Correct!")
+        scoreUp(points)
+    } else {
+        alert("Incorrect")
+        scoreDown(points)
+    }
+}
+
+const code = (e) => {
+    points = e.innerHTML.split("$")
+    console.log(points)
+    let clue = prompt(musicQ[points[1]])
+    e.disabled = true
+    if(clue === musicA[points[1]]) {
+        alert("Correct!")
+        scoreUp(points)
+    } else {
+        alert("Incorrect")
+        scoreDown(points)
+    }
+}
 
 // const music100 = () => {
 //     let clueMusic100 = prompt(musicQ[100]);
@@ -112,7 +219,7 @@ const scoreDown = (points) => {
 
 const timeSpan = document.getElementById("timer")
 
-const mins = 2;
+const mins = .1;
 const now = new Date().getTime();
 const deadline = mins * 60 * 1000 + now
 
@@ -123,8 +230,19 @@ setInterval(() => {
     let seconds = Math.floor((distance % (1000 * 60))/1000)
 
     timeSpan.innerHTML = minutes + ":" + seconds
-    if (timeSpan = 0) { 
-        alert("Game OVER")
+    
+    if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML) > 0)) { 
+        alert("GAME OVER. You WON!")
+        timeSpan.innerHTML = "" 
+    } else if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML)) <= 0) {
+        alert("GAME OVER. You LOST!")
+        timeSpan.innerHTML = ""
     }
-}, 1000)
+}, 10)
+
+
+
+
+
+
 
