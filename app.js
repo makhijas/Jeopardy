@@ -18,7 +18,7 @@ const musicA = {
     500: "Led Zepplin"
 }
 
-//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/science-trivia-questions/
 const scienceQ = {
     100: "This is the nearest planet to the sun?", 
     200: "This is the largest known land animal?",
@@ -27,7 +27,7 @@ const scienceQ = {
     500: "First woman to win the Nobel Prize - TWICE!"
 }
 
-//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/science-trivia-questions/
 const scienceA = {
     100: "Mercury", 
     200: "Elephant",
@@ -38,20 +38,20 @@ const scienceA = {
 
 //CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
 const artQ = {
-    100: "Beethoven, Vivaldi, Tchaikovsky and Mozart are from this era", 
-    200: "This broadway musical first came to Seattle in 2018",
-    300: "Kanye West's hometown",
-    400: "This Pink Floyd album features a prism on the cover",
-    500: "This famous music group was formerly known as the New Yardbirds"
+    100: "This famous painter was also a sculptor, an architect, and an engineer", 
+    200: "Claude Monet is most known for his paintings of this flower",
+    300: "This artist is well known for his paintings of ballerinas",
+    400: "Peering through his window of his asylum room at Saint-Rémy-de-Provence inspired this famous painting",
+    500: "This period has a French name that translates to “rebirth” in English"
 }
 
 //CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
 const artA = {
-    100: "Classical", 
-    200: "Hamilton",
-    300: "Chicago",
-    400: "Dark Side Of The Moon",
-    500: "Led Zepplin"
+    100: "Leonardo Da Vinci", 
+    200: "Water Lily",
+    300: "Edgar Degas",
+    400: "Starry Night",
+    500: "Renaissance"
 }
 
 //CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
@@ -216,30 +216,34 @@ const scoreDown = (points) => {
 //     }
 //   }
 
+const timer = () => {
+    const timeSpan = document.getElementById("timer")
 
-const timeSpan = document.getElementById("timer")
+    const mins = .1;
+    const now = new Date().getTime();
+    const deadline = mins * 60 * 1000 + now
 
-const mins = .1;
-const now = new Date().getTime();
-const deadline = mins * 60 * 1000 + now
+    setInterval(() => {
+        let currentTime = new Date().getTime()
+        let distance = deadline - currentTime
+        let minutes = Math.floor((distance % (1000 * 60 * 60))/(1000*60))
+        let seconds = Math.floor((distance % (1000 * 60))/1000)
 
-setInterval(() => {
-    let currentTime = new Date().getTime()
-    let distance = deadline - currentTime
-    let minutes = Math.floor((distance % (1000 * 60 * 60))/(1000*60))
-    let seconds = Math.floor((distance % (1000 * 60))/1000)
+        timeSpan.innerHTML = minutes + ":" + seconds
+        
+        if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML) > 0)) { 
+            alert("GAME OVER. You WON!")
+            timeSpan.innerHTML = "" 
+        } else if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML)) <= 0) {
+            alert("GAME OVER. You LOST!")
+            timeSpan.innerHTML = ""
+        }
+    }, 10)
+}
 
-    timeSpan.innerHTML = minutes + ":" + seconds
-    
-    if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML) > 0)) { 
-        alert("GAME OVER. You WON!")
-        timeSpan.innerHTML = "" 
-    } else if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML)) <= 0) {
-        alert("GAME OVER. You LOST!")
-        timeSpan.innerHTML = ""
-    }
-}, 10)
-
+const clearTime = (e) => {
+    clearInterval(timer())
+}
 
 
 
