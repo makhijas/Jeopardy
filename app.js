@@ -45,7 +45,6 @@ const artQ = {
     500: "This period has a French name that translates to “rebirth” in English"
 }
 
-//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
 const artA = {
     100: "Leonardo Da Vinci", 
     200: "Water Lily",
@@ -54,7 +53,7 @@ const artA = {
     500: "Renaissance"
 }
 
-//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+//CITE: https://parade.com/1037122/alexandra-hurtado/pop-culture-trivia/
 const popCultQ = {
     100: "Title of of Michelle Obama’s 2018 memoir", 
     200: "First non-English-language film to win Best Picture at the Oscars",
@@ -63,7 +62,7 @@ const popCultQ = {
     500: "Rihanna's real name"
 }
 
-//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+//CITE: https://parade.com/1037122/alexandra-hurtado/pop-culture-trivia/
 const popCultA = {
     100: "Becoming", 
     200: "Parasite",
@@ -80,7 +79,6 @@ const codeQ = {
     500: "This object uses square brackets[] to hold it's items"
 }
 
-//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
 const codeA = {
     100: "MDN", 
     200: "HTML",
@@ -88,15 +86,6 @@ const codeA = {
     400: "For Loop",
     500: "Array"
 }
-//the following gives an array of all buttons
-//buttons = document.querySelectorAll("button")
-
-//Add event listeners to above array here by looping through and accessing EACH element
-// for (let i =0; i>buttons.length; i ++) {
-//     buttons[i].addEventListener("click", button[i].disabled())
-//}
-//was missing e as parameter
-
 
 const music = (e) => {
         points = e.innerHTML.split("$")
@@ -168,31 +157,6 @@ const code = (e) => {
     }
 }
 
-// const music100 = () => {
-//     let clueMusic100 = prompt(musicQ[100]);
-//     if (clueMusic100 === musicA[100]){
-//         alert("Correct!")
-//         scoreUp()
-//     } else {
-//         alert("Incorrect!")
-//         scoreDown()
-//     }
-// }
-
-// const music200 = () => {
-//     let clueMusic200 = prompt(musicQ[200]);
-//     if (clueMusic200 === musicA[200]){
-//         alert("Correct!")
-//         scoreUp()
-//         //CITE: https://www.w3schools.com/jsref/prop_pushbutton_disabled.asp
-//         document.getElementById("button").disabled = true;
-//     } else {
-//         alert("Incorrect!")
-//         scoreDown()
-//         document.getElementById("button").disabled = true;
-//     }
-// }
-
 
 const scoreUp = (points) => {
     let currentScore = parseFloat(document.getElementById("scoreDisplay").innerHTML)
@@ -208,43 +172,8 @@ const scoreDown = (points) => {
     document.getElementById("scoreDisplay").innerHTML = currentScore;
 }
 
-// const gameEnd = () => {
-//     let currentScore = parseFloat(document.getElementById("scoreDisplay").innerHTML)
-//     if (currentScore === 1000) { 
-//         return alert("GameOver. You WIN!")
-//     } else if (currentScore < 0) { 
-//         return alert("GameOver. You LOST!")
-//     }
-// }
-
-// if (parseFloat(document.getElementById("scoreDisplay").innerHTML) === 7500) {
-//     alert("You WON!" )
-// } else { 
-//     alert("You WON!")
-// }
-// const timer = () => {
-//     timerEl = getElementById("timer").innerHTML
-//     var countdown = setInterval(function() { seconds--; document. getElementById("countdown"). textContent = seconds; if (seconds <= 0) clearInterval(countdown); }, 1000); // Update the count down every 1 second var x = setInterval(function() { // Get today's date and time var now = new Date().getTime(); // Find the distance between now and the count down date var distance = countDownDate - now; // Time calculations for days, hours, minutes and seconds var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-// }
-
-// timerDisplay = document.querySelector("timer").innerHTML
-
-// const endGame = () =? {
-//     timerDisplay = setInterval(flashText, 1000);
-//   }
-
-// const gameEnd = () => {
-//     var oElem = document.getElementById('my_box');
-//     if(oElem.style.color === 'red') {
-//       oElem.style.color = 'blue'
-//     } else {
-//       oElem.style.color = 'red'
-//     }
-//   }
 
 //CITE: https://stackoverflow.com/questions/56569124/countdown-timer-in-vanilla-javascript-without-using-a-function
-
-
 const timer = () => {
     const timeSpan = document.getElementById("timer")
 
@@ -272,9 +201,7 @@ const timer = () => {
     }, 10)
 }
 
-// const clearTime = (e) => {
-//     clearInterval(timer())
-// }
+
 
 
 
