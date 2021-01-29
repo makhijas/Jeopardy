@@ -56,28 +56,28 @@ const artA = {
 
 //CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
 const popCultQ = {
-    100: "Beethoven, Vivaldi, Tchaikovsky and Mozart are from this era", 
-    200: "This broadway musical first came to Seattle in 2018",
-    300: "Kanye West's hometown",
-    400: "This Pink Floyd album features a prism on the cover",
-    500: "This famous music group was formerly known as the New Yardbirds"
+    100: "Title of of Michelle Obama’s 2018 memoir", 
+    200: "First non-English-language film to win Best Picture at the Oscars",
+    300: "What day is Star Wars Day",
+    400: "_______ Kramer",
+    500: "Rihanna's real name"
 }
 
 //CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
 const popCultA = {
-    100: "Classical", 
-    200: "Hamilton",
-    300: "Chicago",
-    400: "Dark Side Of The Moon",
-    500: "Led Zepplin"
+    100: "Becoming", 
+    200: "Parasite",
+    300: "May 4",
+    400: "Cosmo",
+    500: "Robyn Fenty"
 }
 
 const codeQ = {
     100: "James' favourite resource", 
     200: "Language that uses elements, tags, classes and ids",
     300: "Styling laguage",
-    400: "This Pink Floyd album features a prism on the cover",
-    500: "This famous music group was formerly known as the New Yardbirds"
+    400: "Use this to repeat a block of code",
+    500: "This object uses square brackets[] to hold it's items"
 }
 
 //CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
@@ -85,8 +85,8 @@ const codeA = {
     100: "MDN", 
     200: "HTML",
     300: "CSS",
-    400: "Dark Side Of The Moon",
-    500: "Led Zepplin"
+    400: "For Loop",
+    500: "Array"
 }
 //the following gives an array of all buttons
 //buttons = document.querySelectorAll("button")
@@ -261,15 +261,14 @@ const timer = () => {
         timeSpan.innerHTML = minutes + ":" + seconds
         
         if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML) > 0)) { 
-            alert("GAME OVER. You WON!")
-            //timeSpan.innerHTML = "" 
+            alert("GAME OVER. You WON!") 
             clearInterval(interval)
+            timeSpan.innerHTML = ""
         } else if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML)) <= 0) {
             alert("GAME OVER. You LOST!")
-            //timeSpan.innerHTML = ""
             clearInterval(interval)
+            timeSpan.innerHTML = ""
         }
-
     }, 10)
 }
 
