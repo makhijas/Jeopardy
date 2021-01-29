@@ -36,7 +36,7 @@ const scienceA = {
     500: "Marie Curie"
 }
 
-//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+//CITE: 
 const artQ = {
     100: "This famous painter was also a sculptor, an architect, and an engineer", 
     200: "Claude Monet is most known for his paintings of this flower",
@@ -71,8 +71,25 @@ const popCultA = {
     400: "Dark Side Of The Moon",
     500: "Led Zepplin"
 }
+
+const codeQ = {
+    100: "James' favourite resource", 
+    200: "Language that uses elements, tags, classes and ids",
+    300: "Styling laguage",
+    400: "This Pink Floyd album features a prism on the cover",
+    500: "This famous music group was formerly known as the New Yardbirds"
+}
+
+//CITE: https://thoughtcatalog.com/samantha-newman/2020/04/music-trivia-questions/
+const codeA = {
+    100: "MDN", 
+    200: "HTML",
+    300: "CSS",
+    400: "Dark Side Of The Moon",
+    500: "Led Zepplin"
+}
 //the following gives an array of all buttons
-buttons = document.querySelectorAll("button")
+//buttons = document.querySelectorAll("button")
 
 //Add event listeners to above array here by looping through and accessing EACH element
 // for (let i =0; i>buttons.length; i ++) {
@@ -98,9 +115,9 @@ const music = (e) => {
 const science = (e) => {
     points = e.innerHTML.split("$")
     console.log(points)
-    let clue = prompt(musicQ[points[1]])
+    let clue = prompt(scienceQ[points[1]])
     e.disabled = true
-    if(clue === musicA[points[1]]) {
+    if(clue === scienceA[points[1]]) {
         alert("Correct!")
         scoreUp(points)
     } else {
@@ -112,9 +129,9 @@ const science = (e) => {
 const art = (e) => {
     points = e.innerHTML.split("$")
     console.log(points)
-    let clue = prompt(musicQ[points[1]])
+    let clue = prompt(artQ[points[1]])
     e.disabled = true
-    if(clue === musicA[points[1]]) {
+    if(clue === artA[points[1]]) {
         alert("Correct!")
         scoreUp(points)
     } else {
@@ -126,9 +143,9 @@ const art = (e) => {
 const popCult = (e) => {
     points = e.innerHTML.split("$")
     console.log(points)
-    let clue = prompt(musicQ[points[1]])
+    let clue = prompt(popCultQ[points[1]])
     e.disabled = true
-    if(clue === musicA[points[1]]) {
+    if(clue === popCultA[points[1]]) {
         alert("Correct!")
         scoreUp(points)
     } else {
@@ -140,9 +157,9 @@ const popCult = (e) => {
 const code = (e) => {
     points = e.innerHTML.split("$")
     console.log(points)
-    let clue = prompt(musicQ[points[1]])
+    let clue = prompt(codeQ[points[1]])
     e.disabled = true
-    if(clue === musicA[points[1]]) {
+    if(clue === codeA[points[1]]) {
         alert("Correct!")
         scoreUp(points)
     } else {
@@ -191,6 +208,15 @@ const scoreDown = (points) => {
     document.getElementById("scoreDisplay").innerHTML = currentScore;
 }
 
+// const gameEnd = () => {
+//     let currentScore = parseFloat(document.getElementById("scoreDisplay").innerHTML)
+//     if (currentScore === 1000) { 
+//         return alert("GameOver. You WIN!")
+//     } else if (currentScore < 0) { 
+//         return alert("GameOver. You LOST!")
+//     }
+// }
+
 // if (parseFloat(document.getElementById("scoreDisplay").innerHTML) === 7500) {
 //     alert("You WON!" )
 // } else { 
@@ -216,6 +242,9 @@ const scoreDown = (points) => {
 //     }
 //   }
 
+//CITE: https://stackoverflow.com/questions/56569124/countdown-timer-in-vanilla-javascript-without-using-a-function
+
+
 const timer = () => {
     const timeSpan = document.getElementById("timer")
 
@@ -223,7 +252,7 @@ const timer = () => {
     const now = new Date().getTime();
     const deadline = mins * 60 * 1000 + now
 
-    setInterval(() => {
+    const interval = setInterval(() => {
         let currentTime = new Date().getTime()
         let distance = deadline - currentTime
         let minutes = Math.floor((distance % (1000 * 60 * 60))/(1000*60))
@@ -233,17 +262,21 @@ const timer = () => {
         
         if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML) > 0)) { 
             alert("GAME OVER. You WON!")
-            timeSpan.innerHTML = "" 
+            //timeSpan.innerHTML = "" 
+            clearInterval(interval)
         } else if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML)) <= 0) {
             alert("GAME OVER. You LOST!")
-            timeSpan.innerHTML = ""
+            //timeSpan.innerHTML = ""
+            clearInterval(interval)
         }
+
     }, 10)
 }
 
-const clearTime = (e) => {
-    clearInterval(timer())
-}
+// const clearTime = (e) => {
+//     clearInterval(timer())
+// }
+
 
 
 
