@@ -92,7 +92,6 @@ const music = (e) => {
         console.log(points)
         let clue = prompt(musicQ[points[1]])
         e.disabled = true
-        e.style.backgroundColor = grey; 
         if(clue === musicA[points[1]]) {
             alert("Correct!")
             scoreUp(points)
@@ -178,7 +177,7 @@ const scoreDown = (points) => {
 const timer = () => {
     const timeSpan = document.getElementById("timer")
 
-    const mins = 2;
+    const mins = .1;
     const now = new Date().getTime();
     const deadline = mins * 60 * 1000 + now
 
@@ -189,7 +188,7 @@ const timer = () => {
         let seconds = Math.floor((distance % (1000 * 60))/1000)
 
         timeSpan.innerHTML = minutes + ":" + seconds
-        
+        document.getElementById("timer").onclick = null
         if ((timeSpan.innerHTML < "0:0") && (parseFloat(document.getElementById("scoreDisplay").innerHTML) > 0)) { 
             alert("GAME OVER. You WIN!") 
             clearInterval(interval)
@@ -201,7 +200,7 @@ const timer = () => {
             timeSpan.innerHTML = ""
             window.location.reload() 
         }
-    }, 10)
+    }, 1)
 }
 
 
