@@ -177,7 +177,7 @@ const scoreDown = (points) => {
 const timer = () => {
     const timeSpan = document.getElementById("timer")
 
-    const mins = .1;
+    const mins = 2;
     const now = new Date().getTime();
     const deadline = mins * 60 * 1000 + now
 
