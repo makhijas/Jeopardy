@@ -25,6 +25,7 @@ span {
 .categories {
     display: flex;
     width: 500px;
+    font-size: 18px; 
 }
 button {
     display:flex;
@@ -71,3 +72,4 @@ button {
     height: 20px;   
     text-align: center;
 }
+
